@@ -37,6 +37,15 @@ def get_Cheeger_pq(G):
 
 # ************************ Parallel Computing of Cheeger Constant****************************************
 
+def grouper(n, iterable):
+    it = iter(iterable)
+    while True:
+       chunk = tuple(itertools.islice(it, n))
+       if not chunk:
+           return
+       yield chunk
+
+
 def boundary_length2(T):
     G,aSet = T
     all_crossing_edges=set([])
