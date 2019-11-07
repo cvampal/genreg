@@ -1,5 +1,14 @@
 # genreg
-generate regular graphs and calculate isoperimertic constant efficiently.<br>
-It has two modules topkl and tocsv. topkl generate random regular graphs and compute the spectrum of adjecency matrix then save the graph object as pickle object. tocsv read the pickeled graph and compute cheeger constant (isoperimetric constant) using multiprocessing and save it to csv file. 
+generate regular graphs and calculate isoperimertic constant.
+There are python modules topkl and tocsv. 
+>topkl generate random regular graphs and compute the eigenvalues of adjecency matrix then save the graph as pickle object. 
+
+>tocsv read the pickeled graph and compute cheeger constant (isoperimetric constant) using multiprocessing and save it to csv file. 
+
 ## Usages:
-to make a python enviroment run env.sh file.(optional if you have all the dpendencies mentioned in requirement.txt file, don't need to run it.)
+- **Optional** 
+ To make a python enviroment run `./env.sh` It will download miniconda and install all required dependencies. 
+ or if you have python already run ` pip install -r requirements.txt` only.
+ 
+- run ` python main.py n k filename ` where n is size of graph (no of vertex) k is sample size (for each regularity of n) 
+it will generate about (nk) unique graphs if n is even else (nk/2).
