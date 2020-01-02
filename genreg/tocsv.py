@@ -63,11 +63,11 @@ def get_Cheeger_pq_parallel(G):
     currentMin=num_vertices**2
     p,q = 0,0
     for subset_size in range((int)(num_vertices/2)):
-            q_var = subset_size+1
-            possibleASets=findsubsets(vertices,subset_size+1)
-            possibleASets = grouper(7000000,possibleASets)
-            for chunk in possibleASets:
-                data = [(G,aSet) for aSet in chunk]
+                q_var = subset_size+1
+                possibleASets=findsubsets(vertices,subset_size+1)
+                #possibleASets = grouper(7000000,possibleASets)
+                #for chunk in possibleASets:
+                data = [(G,aSet) for aSet in possibleASets]
                 pools = multiprocessing.Pool(7)
                 results = pools.map(boundary_length2,data)
                 pools.close()
