@@ -3,6 +3,4 @@ chmod +x Miniconda3-latest-Linux-x86_64.sh
 ./Miniconda3-latest-Linux-x86_64.sh
 source ~/miniconda3/bin/activate
 pip install -r requirements.txt
-echo 'env created'
-touch genreg/__init__.py
 mkdir data
