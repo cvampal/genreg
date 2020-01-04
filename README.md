@@ -8,11 +8,11 @@ In ``genreg/``
 
 ## Usages:
 - **Optional** : To create *[miniconda](https://docs.conda.io/en/latest/miniconda.html)* ``python3`` enviroment with all dependencies installed.
-> `` chmod +x env.sh  && ./env.sh ``
+    > `` chmod +x env.sh  && ./env.sh ``
 
-> `` source ~/miniconda3/bin/activate``
+    > `` source ~/miniconda3/bin/activate``
 
-> `` pip install -r requirements.txt``
+    > `` pip install -r requirements.txt``
 
  - `` python main.py argv[1] argv[2] argv[3]``
  
