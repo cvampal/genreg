@@ -7,4 +7,6 @@ generate regular graphs randomly
 
 
 ## References
-[1] ....
+[1] A. Steger and N. Wormald,
+   Generating random regular graphs quickly,
+   Probability and Computing 8 (1999), 377-396, 1999.
