@@ -19,7 +19,7 @@ void print_edges(const SetPair& ed){
 	std::cout << "]\n";
 }
 
-bool is_suitable(const SetPair& edges, const Map& potential_edges){
+bool _is_suitable(const SetPair& edges, const Map& potential_edges){
 	if(potential_edges.size() == 0) {
 		return true;
 	}
@@ -43,7 +43,7 @@ bool is_suitable(const SetPair& edges, const Map& potential_edges){
 	return false;
 }
 
-SetPair random_regular_graph(int n, int d) {
+SetPair _random_regular_graph(int n, int d) {
 	if ((n*d) % 2 != 0  or d >= n) {
 	       throw std::invalid_argument("n*d must be even and d must be less than n.");
 	}	       
@@ -76,7 +76,7 @@ SetPair random_regular_graph(int n, int d) {
 					potential_edges[s2] += 1;
 				}
 			}
-		if (!is_suitable(edges,potential_edges)){
+		if (!_is_suitable(edges,potential_edges)){
 			return SetPair{};
 		}
 		v.clear();
@@ -91,15 +91,22 @@ SetPair random_regular_graph(int n, int d) {
 	return edges;
 }
 
+
+SetPair random_regular_graph(int n, int d) {
+	auto ed = _random_regular_graph(n,d);
+	while(ed.size() == 0){
+		ed = random_regular_graph(n,d);
+	}
+	return ed;	
+}
+
+
 int main(int argc, char const *argv[])
 {
 	int n = atoi(argv[1]); // Number of nodes (size of the graph)
 	int d = atoi(argv[2]); // degree of each node in the graph
 
 	SetPair ed = random_regular_graph(n,d);
-	while(ed.size() == 0){
-		ed = random_regular_graph(n,d);
-	}
         print_edges(ed);
 	return 0;
 }
